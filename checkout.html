@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .checkout-wrapper { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+        .checkout-box { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .checkout-box h3 { margin-bottom: 15px; font-size: 18px; }
+        .summary-item { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; color: #636e72; }
+        .summary-total { display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 2px dashed #dfe6e9; font-weight: 700; font-size: 18px; color: #e17055; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>⌨️ Marcello Store</h1></div>
+        <nav><ul><li><a href="cart.html">← Kembali ke Keranjang</a></li></ul></nav>
+    </header>
+    <div class="checkout-wrapper">
+        <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Checkout</h2>
+        
+        <div class="checkout-box">
+            <h3>📦 Data Pembeli</h3>
+            <input type="text" id="nama" placeholder="Nama Lengkap" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dfe6e9; border-radius: 10px;">
+            <input type="number" id="hp" placeholder="Nomor HP" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dfe6e9; border-radius: 10px;">
+            <textarea id="alamat" placeholder="Alamat Lengkap" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #dfe6e9; border-radius: 10px; height: 80px;"></textarea>
+        </div>
+
+        <div class="checkout-box">
+            <h3>💳 Pilih Metode Pembayaran</h3>
+            <div class="payment-option">
+                 <div class="pay-card" onclick="chooseCheckoutPayment('DANA', this)">
+                      <img src="img/logo/dana.png" alt="DANA">
+                      <p>DANA</p>
+                 </div>
+                 <div class="pay-card" onclick="chooseCheckoutPayment('GoPay', this)">
+                      <img src="img/logo/gopay.png" alt="GoPay">
+                      <p>GoPay</p>
+                 </div>
+                 <div class="pay-card" onclick="chooseCheckoutPayment('QRIS', this)">
+                      <img src="img/logo/qris.png" alt="QRIS">
+                      <p>QRIS</p>
+                 </div>
+            </div>
+            <div id="checkoutPaymentInfo" style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; text-align: center; display: none;"></div>
+        </div>
+
+        <div class="checkout-box">
+            <h3>📝 Ringkasan Pesanan</h3>
+            <div id="summary"></div>
+            <div class="summary-total"><span>Total Pembayaran</span><span>Rp <span id="total">0</span></span></div>
+            <button class="confirm" style="width: 100%; margin-top: 20px;" onclick="processCheckout()">Bayar Sekarang</button>
+        </div>
+    </div>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

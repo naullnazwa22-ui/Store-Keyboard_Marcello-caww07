@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcello Store | Mechanical Keyboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>⌨️ Marcello Store</h1></div>
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Cari keyboard..." onkeyup="searchProduct()">
+            <button>🔍</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="cart.html" class="cart-icon">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="beranda">
+        <h2>Mechanical Keyboard Terbaik</h2>
+        <p>Temukan keyboard gaming dan custom berkualitas dengan harga terbaik.</p>
+        <a href="#produk" class="btn">Lihat Produk</a>
+    </section>
+
+    <main id="produk">
+        <h2 class="section-title">Produk Unggulan</h2>
+        <div class="product-container">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <img src="img/keyboard/rk61.jpg" alt="RK61">
+                <h3>Royal Kludge RK61</h3>
+                <div class="rating">★★★★<span>(4.4)</span></div>
+                <p class="description">Keyboard mekanikal 60% tri-mode, hot-swappable, dan RGB.</p>
+                <div class="price-box"><span class="price">Rp499.000</span><span class="stock">✔ Ready 32</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>    
+                <button class="buy-btn" onclick="addToCart('Royal Kludge RK61', 499000, 'img/keyboard/rk61.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Royal Kludge RK61', 499000, 'img/keyboard/rk61.jpg')">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <img src="img/keyboard/maxfit67.jpg" alt="Maxfit67">
+                <h3>Fantech Maxfit67</h3>
+                <div class="rating">★★★★★<span>(5.0)</span></div>
+                <p class="description">Keyboard 67 tombol dengan rotary knob, hot-swappable, dan RGB.</p>
+                <div class="price-box"><span class="price">Rp799.000</span><span class="stock">✔ Ready 66</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>    
+                <button class="buy-btn" onclick="addToCart('Fantech Maxfit67', 799000, 'img/keyboard/maxfit67.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Fantech Maxfit67', 799000, 'img/keyboard/maxfit67.jpg')">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <img src="img/keyboard/ak820.jpg" alt="AK820">
+                <h3>Ajazz AK820 Pro</h3>
+                <div class="rating">★★★★★<span>(4.8)</span></div>
+                <p class="description">Keyboard 75% dengan layar TFT, gasket mount, dan tri-mode.</p>
+                <div class="price-box"><span class="price">Rp1.299.000</span><span class="stock">✔ Ready 15</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>  
+                <button class="buy-btn" onclick="addToCart('Ajazz AK820 Pro', 1299000, 'img/keyboard/ak820.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Ajazz AK820 Pro', 1299000, 'img/keyboard/ak820.jpg')">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <img src="img/keyboard/keychron.jpg" alt="Keychron">
+                <h3>Keychron K2 Pro</h3>
+                <div class="rating">★★★★★<span>(4.9)</span></div>
+                <p class="description">Keyboard 75% wireless premium, QMK/VIA support, aluminum.</p>
+                <div class="price-box"><span class="price">Rp1.650.000</span><span class="stock">✔ Ready 44</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>  
+                <button class="buy-btn" onclick="addToCart('Keychron K2 Pro', 1650000, 'img/keyboard/keychron.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Keychron K2 Pro', 1650000, 'img/keyboard/keychron.jpg')">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="product-card">
+                <img src="img/keyboard/logitech.jpg" alt="Logitech">
+                <h3>Logitech G Pro X TKL</h3>
+                <div class="rating">★★★★★<span>(4.7)</span></div>
+                <p class="description">Keyboard esports tenkeyless, switch GX, kabel detachable.</p>
+                <div class="price-box"><span class="price">Rp2.199.000</span><span class="stock">✔ Ready 23</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>  
+                <button class="buy-btn" onclick="addToCart('Logitech G Pro X TKL', 2199000, 'img/keyboard/logitech.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Logitech G Pro X TKL', 2199000, 'img/keyboard/logitech.jpg')">Beli Sekarang</button>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="product-card">
+                <img src="img/keyboard/razer.jpg" alt="Razer">
+                <h3>Razer Huntsman V2 Mini</h3>
+                <div class="rating">★★★★<span>(4.6)</span></div>
+                <p class="description">Keyboard 60% optical switch gen-2, respons super cepat.</p>
+                <div class="price-box"><span class="price">Rp1.899.000</span><span class="stock">✔ Ready 25</span></div>
+                <div class="marketplace">
+                    <a href="#" class="shopee"><img src="img/logo/shopee.png" alt="Shopee"> Shopee</a>
+                    <a href="#" class="tokopedia"><img src="img/logo/tokopedia.png" alt="Tokopedia"> Tokopedia</a>
+                </div>  
+                <button class="buy-btn" onclick="addToCart('Razer Huntsman V2 Mini', 1899000, 'img/keyboard/razer.jpg')">🛒 Tambah ke Keranjang</button>
+                <button class="buy-btn outline" onclick="openPopup('Razer Huntsman V2 Mini', 1899000, 'img/keyboard/razer.jpg')">Beli Sekarang</button>
+            </div>
+        </div>
+    </main>
+
+    <section id="kontak" class="contact">
+        <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
+        <div class="contact-box">
+            <p>📍 Bandung, Indonesia</p>
+            <p>📞 0821-3083-0417</p>
+            <p>✉️ marcellostore@gmail.com</p>
+            <p>🕘 Senin - Minggu (08.00 - 22.00)</p>
+            <p>
+            <a href="https://instagram.com/marcellostore" target="_blank">📸 keyboard_caww07</a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <label>Jumlah:</label>
+            <div class="qty-box">
+                <button type="button" onclick="minusQty()">-</button>
+                <input id="qty" type="number" value="1" readonly>
+                <button type="button" onclick="plusQty()">+</button>
+            </div>
+            <h3 id="totalPrice"></h3>
+            <label>Metode Pembayaran:</label>
+            <div class="payment-option">
+                 <div class="pay-card" onclick="choosePayment('DANA', this)">
+                      <img src="img/logo/dana.png" alt="DANA">
+                      <p>DANA</p>
+                 </div>
+                 <div class="pay-card" onclick="choosePayment('GoPay', this)">
+                      <img src="img/logo/gopay.png" alt="GoPay">
+                      <p>GoPay</p>
+                 </div>
+                 <div class="pay-card" onclick="choosePayment('QRIS', this)">
+                      <img src="img/logo/qris.png" alt="QRIS">
+                      <p>QRIS</p>
+                 </div>
+            </div>
+            <div id="paymentInfo"></div>
+            <label>Nama:</label><input id="customerName" type="text" placeholder="Nama Lengkap">
+            <label>Nomor HP:</label><input id="customerPhone" type="text" placeholder="08xxxxxxxxxx">
+            <label>Alamat:</label><textarea id="customerAddress" placeholder="Alamat lengkap"></textarea>
+            <button class="confirm" onclick="confirmDirectOrder()">Konfirmasi Pembelian</button>
+        </div>
+    </div>
+
+    <footer><p>© 2026 Marcello Store | All Rights Reserved</p></footer>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

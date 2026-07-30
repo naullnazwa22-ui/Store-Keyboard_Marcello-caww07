@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .invoice-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .invoice-product { display: flex; gap: 15px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #dfe6e9; }
+        .status { color: #e17055; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header><div class="logo"><h1>⌨️ Marcello Store</h1></div></header>
+    <section class="invoice-container">
+        <h2 style="text-align: center;">Terima Kasih Telah Berbelanja!</h2>
+        <h3 style="text-align: center; color: #636e72; margin-bottom: 30px;" id="invoiceNumber"></h3>
+        <h3>Data Pembeli</h3>
+        <p><strong>Nama :</strong> <span id="buyerName"></span></p>
+        <p><strong>Nomor HP :</strong> <span id="buyerPhone"></span></p>
+        <p><strong>Alamat :</strong> <span id="buyerAddress"></span></p>
+        <p><strong>Pembayaran :</strong> <span id="paymentMethod"></span></p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #dfe6e9;">
+        <h3>Detail Produk</h3>
+        <div id="productList"></div>
+        <h2 style="text-align: right; margin-top: 20px; color: #e17055;">Total : Rp <span id="totalPrice"></span></h2>
+        <h3 style="text-align: right;">Status : <span class="status">Menunggu Pembayaran</span></h3>
+        <button class="confirm" style="margin-top: 30px;" onclick="resetAndHome()">Kembali ke Home</button>
+    </section>
+    <script>
+        document.getElementById("invoiceNumber").innerText = "Nomor Invoice : INV-" + Date.now().toString().slice(-8);
+        let buyer = JSON.parse(localStorage.getItem("buyer"));
+        if (buyer) {
+            document.getElementById("buyerName").innerText = buyer.name;
+            document.getElementById("buyerPhone").innerText = buyer.phone;
+            document.getElementById("buyerAddress").innerText = buyer.address;
+            document.getElementById("paymentMethod").innerText = buyer.payment;
+        }
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let productHTML = "", total = 0;
+        cart.forEach(item => {
+            let subtotal = item.price * item.qty;
+            total += subtotal;
+            productHTML += `<div class="invoice-product"><div><p style="font-weight:bold;">${item.name}</p><p style="font-size:14px; color:#636e72;">Qty : ${item.qty} x Rp ${item.price.toLocaleString("id-ID")}</p><p style="font-weight:bold;">Subtotal : Rp ${subtotal.toLocaleString("id-ID")}</p></div></div>`;
+        });
+        document.getElementById("productList").innerHTML = productHTML;
+        document.getElementById("totalPrice").innerText = total.toLocaleString("id-ID");
+        function resetAndHome() {
+            localStorage.removeItem("cart");
+            localStorage.removeItem("buyer");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
